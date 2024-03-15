@@ -18,7 +18,7 @@
         <input type="password" name="senha" id="senha" required>
         <button type="submit">Enviar</button>
     </form>
-    <a href="cad.php">Novo usuario</a>
+    <a href="index.php">Novo usuario</a>
 
 
 </body>
