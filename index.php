@@ -7,19 +7,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>CADASTRAR USUARIO</h1>
-    <form action="action-users.php" method="post">
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="name" required>
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" required>
-        <label for="senha">Senha:</label>
-        <input type="text" name="senha" id="senha" required>
-        <button type="submit">Enviar</button>
-    </form>
+    <div class="container">
+
+        <form class="tweet" action="action-users.php" method="post">
+            <ul class="center">
+            <h1>CADASTRAR USUARIO</h1>
+                <li>
+                    <label for="nome">Nome:</label>
+                </li>
+                <li>
+                    <input type="text" name="nome" id="name" required>
+                </li>
+
+                <li> <label for="email">Email:</label>
+                </li>
+                <li>
+                    <input type="email" name="email" id="email" required>
+                </li>
+                <li>
+                    <label for="senha">Senha:</label>
+                </li>
+                <li>
+                    <input type="password" name="senha" id="senha" required><br>
+                </li>
+                <li>
+                    <button type="submit">Enviar</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+
 </body>
 
 </html>

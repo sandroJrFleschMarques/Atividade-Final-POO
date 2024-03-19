@@ -1,6 +1,6 @@
 <?php
-require('util.php');
-
+require('tweet.php');
+session_start();
 
 class Usuario
 {
@@ -19,37 +19,21 @@ class Usuario
     {
         $this->tweets[] = $tweets;
     }
-
-    public function listarTweets()
-    {
-        echo "<pre>";
-        echo print_r($this->email);
-        echo "<br>";
-        echo print_r($this->tweets);
-        echo "<pre>";
-    }
 }
 
-class Tweet
+function getLikesString($user)
 {
-    public $titulo;
-    public $conteudo;
-    public $likes = [];
-    public $id;
+    $numLikes = count($user);
 
-    
-    public function __construct($titulo, $conteudo)
-    {
+    if ($numLikes === 0) {
+        return "<br>";
+    } else if ($numLikes === 1) {
+        $firstLikerUsername = $user[array_key_first($user)];
 
+        return "@{$firstLikerUsername} curtiu<br>";
+    } else {
+        $firstLikerUsername = $user[array_key_first($user)];
 
-        $this->titulo = $titulo;
-        $this->conteudo = $conteudo;
-        $this->id = geraId();
-    }
-    
-
-    public function like($user)
-    {
-        $this->likes = [...$user];
+        return ($numLikes - 1) > 1 ? "@{$firstLikerUsername} curtiu e " . $numLikes - 1 . " outros<br>" : "@{$firstLikerUsername} curtiu e " . $numLikes - 1 . " outro<br>";
     }
 }

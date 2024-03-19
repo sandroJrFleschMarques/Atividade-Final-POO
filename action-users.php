@@ -1,5 +1,6 @@
 <?php
 require('./atividade-final/usuario.php');
+
 if (!session_id()) {
     // Verificando se há uma sessão, caso não tenha, será criada uma.
     session_start();
@@ -13,7 +14,6 @@ if (!isset($_SESSION['users'][$email])) {
     var_dump('Criando lista...');
     $_SESSION['users'][$email] = array();
 }
-
 
 $usuario = new Usuario($nome, $email, $senha);
 array_push($_SESSION['users'][$email], $usuario);
